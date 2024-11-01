@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+    <img src="logo.png" alt="Zhiwei's Pizza Logo" class="logo">
+    <div class="top-section">
+        <div class="register-banner">
+            <img src="https://images.ctfassets.net/j8tkpy1gjhi5/5OvVmigx6VIUsyoKz1EHUs/b8173b7dcfbd6da341ce11bcebfa86ea/Salami-pizza-hero.jpg" alt="Salami Red Onion and Oregano Pizza" class="pizza-image">
+            <div class="special-text">
+                <h1>Free Pizza</h1>
+                <p>Register to get your free pizza today!</p>
+                <p>All you need to do is to join us, and you could be enjoying delicious pizza in no time. Whether it’s sharing with friends or indulging by yourself, free pizza always adds a special flavor to your routine.</p>
+                <p>Don’t miss any chance to grab a slice of happiness—register now and let’s discover the little joys of life together!</p>
+            </div>
+        </div>   
+    </div>
+    
+    <div class="form-section">
+        <form id="registrationForm" novalidate>
+            <section>
+                <h2>Personal Information</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required minlength="3">
+
+                <label for="yearOfBirth">Year of Birth:</label>
+                <input type="number" id="yearOfBirth" name="yearOfBirth" required min="1901" max="2023">
+            </section>
+
+            <section>
+                <h2>Residency</h2>
+                <label>
+                    <input type="checkbox" id="liveInUS" name="liveInUS" onchange="toggleZipcodeVisibility()">
+                    Do you live in the United States?
+                </label>
+                <div id="zipcodeWrapper" style="display:none;">
+                    <label for="zipcode">Zipcode:</label>
+                    <input type="text" id="zipcode" name="zipcode" pattern="\d{5}">
+                </div>
+            </section>
+
+            <section>
+                <h2>Security</h2>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="8">
+            </section>
+
+            <fieldset>
+                <legend>Food Preferences</legend>
+                <label><input type="radio" name="pizzaType" value="With pineapple" required> With pineapple</label>
+                <label><input type="radio" name="pizzaType" value="Without pineapple" required> Without pineapple</label>
+                <label><input type="radio" name="pizzaType" value="I do not like pizza" required> I do not like pizza</label>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</main>
+
+<aside id="errorMessages"></aside>
+
+<script src="index.js"></script>
+</body>
+</html>
+
